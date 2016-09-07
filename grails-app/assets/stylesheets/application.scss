@@ -1,0 +1,117 @@
+//@import 'vendor/normalize/normalize.css';
+@import "vendor/bootstrap/bootstrap";
+
+$font-stack: Roboto, Noto, Helvetica, Arial, sans-serif;
+
+$base-primary: #FF00FF;
+$base-accent: #F0F0F0;
+
+$contrast-primary: #E0E0E0;
+$contrast-accent: #D8D8D8;
+
+$accent: #e97e00;
+$accent-primary: #21aa7b;
+$accent-contrast: #5d6aac;
+
+body {
+  padding: 50px;
+  font: 14px $font-stack;
+  color: $base-primary;
+  background-color: $base-primary;
+}
+
+nav {
+  @extend .navbar;
+  @extend .navbar-light;
+  @extend .navbar-fixed-top;
+
+  header {
+    @extend .navbar;
+
+    a {
+      @extend .navbar-brand;
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+
+  #navMenu {
+    @extend .collapse;
+    @extend .navbar-toggleable-xs;
+  }
+
+  ul {
+    @extend .nav;
+    @extend .navbar-nav;
+
+    li {
+      @extend .nav-item;
+
+      a {
+        @extend .nav-link;
+
+        #activeMarker {
+          @extend sr-only;
+        }
+      }
+    }
+  }
+
+  button#menu {
+    @extend .navbar-toggler;
+    @extend .hidden-sm-up;
+  }
+}
+
+#main-content {
+  @include make-container();
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $accent-primary;
+}
+
+article {
+  background-color: $base-accent;
+  color: $contrast-primary;
+  border-radius: 1em;
+  margin: 2em 0;
+  padding: 2em;
+  box-shadow: 0px 0px 20px #888888;
+
+}
+
+/*article article {
+  background-color: $base-primary;
+  color: $contrast-primary;
+}*/
+
+a {
+  color: $accent-contrast;
+}
+
+.carousel img {
+  clip: rect(0px, 60px, 200px, 0px);
+}
+
+#team-tabs {
+  @extend .nav;
+  @extend .nav-tabs;
+
+  li {
+    @extend .nav-item;
+
+    a {
+      @extend .nav-link;
+    }
+
+    :first-child {
+      a {
+        @extend .active;
+      }
+    }
+
+  }
+}

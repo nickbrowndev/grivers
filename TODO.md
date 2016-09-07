@@ -40,11 +40,11 @@ Items should be in the form: _As a &lt;user&gt; I want to..._
 
 ## Non-Functional Tasks
 
-+ [ ] Improve display of icon
++ [ ] Improve display of logo
 
 ## Coding tasks
 
-
++ [ ] Add SASS stylesheet support, and port previous stylesheet over
 
 
 

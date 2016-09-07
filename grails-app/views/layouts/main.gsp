@@ -7,6 +7,7 @@
         <g:layoutTitle default="5 Rivers Squash"/>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400i,700" rel="stylesheet">
 
     <asset:stylesheet src="application.css"/>
 
@@ -14,28 +15,55 @@
 </head>
 <body>
 
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/#">
-                    <i class="fa grails-icon">
-                        <asset:image src="5rivers/logo.png"/>
-                    </i> 5 Rivers Squash
-                </a>
-            </div>
-            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
-                <ul class="nav navbar-nav navbar-right">
-                    <g:pageProperty name="page.nav" />
-                </ul>
-            </div>
+<nav>
+
+    <header>
+        <a href="/#">
+            <i id="icon">
+                <asset:image src="5rivers/logo.png"/>
+            </i> 5 Rivers Squash
+        </a>
+    </header>
+    <button type="button" id="menu" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu"
+            aria-expanded="false" aria-label="Toggle navigation">
+        &#9776;
+        <span class="sr-only">Toggle navigation</span>s
+    </button>
+
+    <div id="navMenu" class="collapse navbar-toggleable-xs">
+        <ul class="nav navbar-nav">
+            <li class="nav-link active">
+                <a href="/">News</a>
+                <span id="activeMarker">(current)</span>
+            </li>
+            <li class="nav-link">
+                <a href="/club">Club</a>
+            </li>
+            <li class="nav-link">
+                <a href="#">Events</a>
+            </li>
+            <li class="nav-link">
+                <a href="/teams">Teams</a>
+            </li>
+            <li>
+                <a href="#">Leagues</a>
+            </li>
+            <li>
+                <a href="#">Media</a>
+            </li>
+            <li>
+                <a href="#">Training</a>
+            </li>
+            <li>
+                <a href="#">Sponsors</a>
+            </li>
+            <li>
+                <a href="devforum">Development Forum</a>
+            </li>
+        </ul>
         </div>
-    </div>
+
+</nav>
 
     <g:layoutBody/>
 
