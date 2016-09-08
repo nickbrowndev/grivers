@@ -53,7 +53,7 @@ nav {
         @extend .nav-link;
 
         #activeMarker {
-          @extend sr-only;
+          @extend .sr-only;
         }
       }
     }

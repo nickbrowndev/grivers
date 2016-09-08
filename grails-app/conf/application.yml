@@ -126,4 +126,4 @@ endpoints:
         unique-names: true
 
 server:
-    'contextPath': '/5rivers'
+    'contextPath': '/'
