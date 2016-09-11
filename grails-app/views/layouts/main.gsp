@@ -7,10 +7,9 @@
         <g:layoutTitle default="5 Rivers Squash"/>
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400i,700" rel="stylesheet"/>
 
-    <asset:stylesheet src="application.css"/>
-
+    <asset:stylesheet src="main.css"/>
     <g:layoutHead/>
 </head>
 <body>
@@ -27,22 +26,22 @@
     <button type="button" id="menu" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu"
             aria-expanded="false" aria-label="Toggle navigation">
         &#9776;
-        <span class="sr-only">Toggle navigation</span>s
+        <span class="sr-only">Toggle navigation</span>
     </button>
 
     <div id="navMenu" class="collapse navbar-toggleable-xs">
-        <ul class="nav navbar-nav">
-            <li class="nav-link active">
+        <ul>
+            <li>
                 <a href="/">News</a>
-                <span id="activeMarker">(current)</span>
+                <span>(current)</span>
             </li>
-            <li class="nav-link">
+            <li>
                 <a href="/club">Club</a>
             </li>
-            <li class="nav-link">
+            <li>
                 <a href="#">Events</a>
             </li>
-            <li class="nav-link">
+            <li>
                 <a href="/teams">Teams</a>
             </li>
             <li>
@@ -65,9 +64,38 @@
 
 </nav>
 
+<div id="bodyContent">
     <g:layoutBody/>
+</div>
 
-    <div class="footer" role="contentinfo"></div>
+<footer role="contentinfo">
+    <p>With thanks from our sponsors: TODO</p>
+    <%--
+    <ul id="sponsors">
+        <li>
+            <a href="/#">
+                <i id="icon">
+                    <asset:image src="5rivers/logo.png"/>
+                </i> 5 Rivers Squash
+            </a>
+        </li>
+        <li>
+            <a href="/#">
+                <i id="icon">
+                    <asset:image src="5rivers/logo.png"/>
+                </i> 5 Rivers Squash
+            </a>
+        </li>
+        <li>
+            <a href="/#">
+                <i id="icon">
+                    <asset:image src="5rivers/logo.png"/>
+                </i> 5 Rivers Squash
+            </a>
+        </li>
+
+    </ul>--%>
+</footer>
 
     <div id="spinner" class="spinner" style="display:none;">
         <g:message code="spinner.alt" default="Loading&hellip;"/>

@@ -1,38 +1,34 @@
 //@import 'vendor/normalize/normalize.css';
+@import "vendor/bootstrap/bootstrap-reboot";
 @import "vendor/bootstrap/bootstrap";
 
 $font-stack: Roboto, Noto, Helvetica, Arial, sans-serif;
 
-$base-primary: #FF00FF;
-$base-accent: #F0F0F0;
-
-$contrast-primary: #E0E0E0;
-$contrast-accent: #D8D8D8;
-
-$accent: #e97e00;
-$accent-primary: #21aa7b;
-$accent-contrast: #5d6aac;
+$contrast: #E9E9E9;
+$base: #222930;
+$accent: #4EB1BA;
 
 body {
-  padding: 50px;
+  //padding: 50px;
   font: 14px $font-stack;
-  color: $base-primary;
-  background-color: $base-primary;
+  color: $contrast;
+  background-color: $base;
 }
 
 nav {
   @extend .navbar;
   @extend .navbar-light;
-  @extend .navbar-fixed-top;
+
+  background-color: $contrast;
 
   header {
-    @extend .navbar;
 
     a {
       @extend .navbar-brand;
 
       img {
-        width: 50px;
+        width: 25px;
+        background-color: $base;
       }
     }
   }
@@ -40,46 +36,63 @@ nav {
   #navMenu {
     @extend .collapse;
     @extend .navbar-toggleable-xs;
-  }
 
-  ul {
-    @extend .nav;
-    @extend .navbar-nav;
+    ul {
+      @extend .nav;
+      @extend .navbar-nav;
 
-    li {
-      @extend .nav-item;
+      li {
+        @extend .nav-item;
 
-      a {
-        @extend .nav-link;
+        a {
+          @extend .nav-link;
+        }
 
-        #activeMarker {
+        span {
           @extend .sr-only;
         }
+      }
+
+      li:first-of-type {
+        @extend .active;
       }
     }
   }
 
+
+
   button#menu {
     @extend .navbar-toggler;
     @extend .hidden-sm-up;
+    color: $base;
   }
 }
 
-#main-content {
+#bodyContent {
   @include make-container();
 }
 
+.pageSection {
+  @include make-row();
+}
+
+main {
+  @include make-col(768, 12);
+
+}
+
+
 h1, h2, h3, h4, h5, h6 {
-  color: $accent-primary;
+  color: $accent;
 }
 
 article {
-  background-color: $base-accent;
-  color: $contrast-primary;
-  border-radius: 1em;
+  background-color: $contrast;
+  color: $base;
+  border-radius: 0.5em;
   margin: 2em 0;
   padding: 2em;
-  box-shadow: 0px 0px 20px #888888;
+  //box-shadow: 0px 0px 20px ;
 
 }
 
@@ -89,7 +102,11 @@ article {
 }*/
 
 a {
-  color: $accent-contrast;
+  color: $accent;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .carousel img {
