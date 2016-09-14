@@ -1,4 +1,4 @@
-package grivers
+package nb.grivers.news
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification
@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(ClubController)
-class ClubControllerSpec extends Specification {
+@TestFor(NewsController)
+class NewsControllerSpec extends Specification {
 
     def setup() {
     }

@@ -1,4 +1,4 @@
-package grivers
+package nb.grivers.news
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification

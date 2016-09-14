@@ -1,4 +1,4 @@
-package grivers
+package nb.grivers
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

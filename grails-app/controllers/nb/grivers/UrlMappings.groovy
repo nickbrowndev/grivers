@@ -1,4 +1,4 @@
-package grivers
+package nb.grivers
 
 class UrlMappings {
 

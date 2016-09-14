@@ -16,7 +16,7 @@
 
       <p>${newsItem.content}</p>
       <footer>
-        <p>Created by ${newsItem.author} on ${newsItem.createdDate}</p>
+        <p>Created by ${newsItem.author} on ${newsItem.created}</p>
       </footer>
     </article>
   </g:each>
