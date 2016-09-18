@@ -9,7 +9,7 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/club/index")
+        "/"(view: "/news")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }

@@ -2,22 +2,42 @@ package nb.grivers.news
 
 class NewsController {
 
-    static scaffold = NewsItem
-
     def newsService
 
-    def recent() {
+    def create() {
+    }
 
-        def newsItems = []
-        newsItems << new NewsItem(author: "Nick", createdDate: new Date(), title: "New news item1", content: "Mucho content goes here1")
-        newsItems << new NewsItem(author: "Nick", createdDate: new Date(), title: "New news item2", content: "Mucho content goes here2")
-        newsItems << new NewsItem(author: "Nick", createdDate: new Date(), title: "New news item3", content: "Mucho content goes here3")
+    def save() {
+        def news = new News(params)
+        newsService.save(news)
+        redirect action: "index"
+    }
+
+    def update() {
+        def news = newsService.get(params.id);
+        news.properties = params;
+        newsService.save(news);
+        redirect action: "index"
+    }
+
+    def edit() {
+        def news = newsService.get(params.id)
+        [news: news]
+    }
+
+    def show() {
+        def news = newsService.get(params.id)
+        [news: news]
+    }
+
+    def index() {
+        def newsItems = newsService.getRecentNews(0)
         [newsItems: newsItems]
     }
 
-    def latest() {
-        render(view: "recent")
-        [newsItems: NewsItem.list(sort: created, order: desc, max: 5)]
-    }
+    def convertMarkup() {
+        def convertedMarkup = params.content != null ? newsService.convertMarkup(params.content) : null
 
+        render convertedMarkup
+    }
 }

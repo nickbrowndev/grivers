@@ -10,3 +10,12 @@ classes/
 .project
 .settings
 .classpath
+/out/
+.asscache
+grails-app/taglib/
+grails-app/utils/
+grails-app/views/user/
+out/
+prodDb.mv.db
+src/integration-test/
+src/main/

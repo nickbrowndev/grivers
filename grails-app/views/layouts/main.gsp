@@ -32,32 +32,29 @@
     <div id="navMenu" class="collapse navbar-toggleable-xs">
         <ul>
             <li>
-                <a href="/">News</a>
+                <a href="/news">News</a>
                 <span>(current)</span>
             </li>
             <li>
                 <a href="/club">Club</a>
             </li>
             <li>
-                <a href="#">Events</a>
+                <a href="/events">Events</a>
             </li>
             <li>
                 <a href="/teams">Teams</a>
             </li>
             <li>
-                <a href="#">Leagues</a>
+                <a href="/leagues">Leagues</a>
             </li>
             <li>
-                <a href="#">Media</a>
+                <a href="/media">Media</a>
             </li>
             <li>
-                <a href="#">Training</a>
+                <a href="/sponsors">Sponsors</a>
             </li>
             <li>
-                <a href="#">Sponsors</a>
-            </li>
-            <li>
-                <a href="devforum">Development Forum</a>
+                <a href="/devforum">Development Forum</a>
             </li>
         </ul>
         </div>
@@ -68,9 +65,8 @@
     <g:layoutBody/>
 </div>
 
-<footer role="contentinfo">
+<%--<footer role="contentinfo">
     <p>With thanks from our sponsors: TODO</p>
-    <%--
     <ul id="sponsors">
         <li>
             <a href="/#">
@@ -94,8 +90,8 @@
             </a>
         </li>
 
-    </ul>--%>
-</footer>
+    </ul>
+</footer>--%>
 
     <div id="spinner" class="spinner" style="display:none;">
         <g:message code="spinner.alt" default="Loading&hellip;"/>
