@@ -4,31 +4,39 @@
 
 $font-stack: Roboto, Noto, Helvetica, Arial, sans-serif;
 
-$contrast: #E9E9E9;
-$base: #222930;
-$accent: #4EB1BA;
+$content: #323940;
+$primary: #6377A5; // 6377A5, 3E5489, 273E73, 13295B, 06173E
+$accent: #76AC59; // A6D28E, 76AC59, 548D36, 39701C, 1E4C06
+$background: #F9F9F9;
+$background-em: darken($background, 10%);
+
+// Klimt Colours
+// Prussian Blue #0B3C5D
+// Sky Blue #328CC1
+// Gold Leaf #D98310
+// Ivory Black #1D2731
 
 body {
   //padding: 50px;
   font: 14px $font-stack;
-  color: $contrast;
-  background-color: $base;
+  color: $content;
+  background-color: $background;
 }
 
 nav {
   @extend .navbar;
-  @extend .navbar-light;
+  @extend .navbar-dark;
 
-  background-color: $contrast;
-
+  background-color: $primary;
   header {
 
     a {
       @extend .navbar-brand;
+      color: $background;
 
       img {
         width: 25px;
-        background-color: $base;
+        background-color: $primary;
       }
     }
   }
@@ -64,7 +72,7 @@ nav {
   button#menu {
     @extend .navbar-toggler;
     @extend .hidden-sm-up;
-    color: $base;
+    color: $primary;
   }
 }
 
@@ -83,15 +91,22 @@ main {
 
 
 h1, h2, h3, h4, h5, h6 {
-  color: $accent;
+  color: $primary;
+}
+
+h1 {
+  margin: 0 auto;
 }
 
 article {
-  background-color: $contrast;
-  color: $base;
-  border-radius: 0.5em;
-  margin: 2em 0;
-  padding: 2em;
+  //background-color: $contrast;
+  //color: $base;
+  //order-radius: 0.5em;
+  margin: 1em 0;
+  padding: 1em;
+  border-color: rgba(0, 0, 0, 0);
+  border-top: 1px solid;
+
   //box-shadow: 0px 0px 20px ;
 
 }

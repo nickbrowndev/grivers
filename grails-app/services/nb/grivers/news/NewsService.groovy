@@ -16,18 +16,9 @@ class NewsService {
         News.get(id);
     }
 
-    List<News> getRecentNews(int offset) {
-        def newsItems = News.list(/*sort: "created", order: "desc", max: 5, offset: offset*/)
-        def results = []
-        for (newsItem in newsItems) {
-            def news = new News(
-                    content: convertMarkup(newsItem.content),
-                    dateCreated: newsItem.dateCreated,
-                    lastUpdated: newsItem.lastUpdated)
-            news.id = newsItem.id;
-            results << news;
-        }
-        results
+    def getRecentNews(int offset, int max) {
+        def newsItems = News.list(sort: "dateCreated", order: "desc", max: max, offset: offset)
+        newsItems
     }
 
     String convertMarkup(String markup) {

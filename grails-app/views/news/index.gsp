@@ -6,29 +6,28 @@
 <body>
 
 <main>
-  <h1>News</h1>
+    <h1>News</h1>
 
     <nav>
         <ul>
             <li><g:link action="create">Submit News</g:link></li>
         </ul>
     </nav>
+
     <g:if test="${!newsItems}">
         <p>No news submitted</p>
     </g:if>
-    <g:each in="${newsItems}">
-    <article>
-        <g:link action="edit" id="${it.id}">Update</g:link>
-        <g:link action="delete" id="${it.id}">Delete</g:link>
-        <g:link action="show" id="${it.id}">Show</g:link>
-        ${raw(it.content)}
-      <footer>
-          <p>Created by <%--${it.author.name}--%> on ${it.dateCreated}. Last updated on ${it.lastUpdated}.</p>
-      </footer>
-    </article>
-  </g:each>
+    <g:else>
+        <div id="recentNews">
+            <g:render template="newsItems" model="['newsItems': newsItems]"/>
+        </div>
+        <form action="olderNews'>
+        <button id="showMoreNews">Older</button>
+        </form>
+    </g:else>
 
 </main>
+<asset:javascript src="news/index.js"/>
 </body>
 </html>
 
