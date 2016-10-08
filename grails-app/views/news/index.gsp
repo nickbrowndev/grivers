@@ -18,12 +18,11 @@
         <p>No news submitted</p>
     </g:if>
     <g:else>
+    ${max}
         <div id="recentNews">
             <g:render template="newsItems" model="['newsItems': newsItems]"/>
         </div>
-        <form action="olderNews'>
-        <button id="showMoreNews">Older</button>
-        </form>
+        <g:paginate controller="news" action="index" total="${newsItemsCount}" max="2"/>
     </g:else>
 
 </main>

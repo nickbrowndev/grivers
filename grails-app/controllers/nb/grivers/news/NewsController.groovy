@@ -31,8 +31,9 @@ class NewsController {
         [news: news]
     }
 
-    def index(int offset) {
-        def max = MAX_NEWS_ITEMS;
+    def index() {
+        int offset = params.int("offset") ?: 0
+        int max = params.int("max") ?: 2
         def newsItems = newsService.getRecentNews(offset, max)
         def results = []
         for (newsItem in newsItems) {
@@ -43,17 +44,11 @@ class NewsController {
             news.id = newsItem.id;
             results << news;
         }
-        [newsItems: newsItems, totalNewsItems: newsItems.totalCount, nextOffset: offset + max]
-    }
-
-    // Make this use index. Add parameters to Index()?
-    def olderNews() {
-        def newsItems = newsService.getRecentNews(params.offset, MAX_NEWS_ITEMS)
-        render(template: "newsItems", model: [newsItems: newsItems])
+        [newsItems: results, newsItemsCount: newsItems.totalCount]
     }
 
     def convertMarkup() {
-        def convertedMarkup = params.content != null ? newsService.convertMarkup(params.content) : null
+        def convertedMarkup = params.content ?: newsService.convertMarkup(params.content)
 
         render convertedMarkup
     }
