@@ -18,7 +18,7 @@
 <nav>
 
     <header>
-        <a href="/#">
+        <a href="/">
             <i id="icon">
                 <asset:image src="5rivers/logo.png"/>
             </i> 5 Rivers Squash
